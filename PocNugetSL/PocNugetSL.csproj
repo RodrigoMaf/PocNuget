@@ -4,7 +4,7 @@
     <Id>$(Id)</Id>
     <Title>$(Id)</Title>
     <Product>$(Id)</Product>
-    <Version>1.1.0</Version>
+    <Version>1.3.0</Version>
     <!--<VersionPrefix>1.0.0</VersionPrefix>
     <VersionSuffix>beta</VersionSuffix>-->
     <Company>Nome da Empresa</Company>
@@ -12,47 +12,81 @@
     <Authors>$(UserName)</Authors>
     <DescTemp>Pacote de teste para publicação de teste o nuget.</DescTemp>
     <Copyright>$(Company) (c)</Copyright>
-    <PackageProjectUrl>https://SiteProjeto.com</PackageProjectUrl>
-    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
-    <PackageLicenseUrl>https://LicençaProjeto.com</PackageLicenseUrl>
+    <PackageProjectUrl>
+      https://github.com/RodrigoMaf
+    </PackageProjectUrl>
+    <!--<RequireLicenseAcceptance>false</RequireLicenseAcceptance>-->
+    <!--<PackageLicenseUrl>https://LicençaProjeto.com</PackageLicenseUrl>-->
     <!--<PackageIconUrl></PackageIconUrl>-->   
     <PackageTags>DotNetStandard,PocPacote</PackageTags>
     <PackageReleaseNotes>Este pacote deve ser removido posteriormente</PackageReleaseNotes>
     <Description>$(DescTemp) $(PackageReleaseNotes)</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>    
   </PropertyGroup>
 
-
-  <PropertyGroup Label="Dados de repositório">
-    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
-    <!--<PublishRepositoryUrl>true</PublishRepositoryUrl>-->
-    <!--<RepositoryUrl></RepositoryUrl>-->
-    <!--<RepositoryType></RepositoryType>-->
-  </PropertyGroup>
-  
   <PropertyGroup Label="Publicação do pacote local">
-    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PublishProtocol>FileSystem</PublishProtocol>
-    <PublishDir>C:\_Projetos\nuget-packages\$(Configuration)</PublishDir>
-    <DocumentationFile>..\PocNugetSL\PocNugetSL.xml</DocumentationFile>
+    <PublishDir></PublishDir>-->
   </PropertyGroup>
   
-  <PropertyGroup>
-    <!--<DebugSymbols>True</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Configuration>Debug</Configuration>
-    <IncludeSource>true</IncludeSource>-->
-    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  <PropertyGroup Label="Pública o xml para o pacote">
+    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+    <DocumentationFile>
+      ..\PocNugetSL\PocNugetSL.xml
+    </DocumentationFile>
   </PropertyGroup>
-  
-  
-  <ItemGroup Label="Inclusão de arquivos">
+
+  <ItemGroup Label="Inclusão de Assets de configuração">
     <Content Include="Arquivo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>    
+  </ItemGroup>
 
+  <PropertyGroup Label="Dados de repositório">
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/RodrigoMaf/PocNuget.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!--Define se vai ser gerado o pdb ou não-->
+    <!--<DebugSymbols>True</DebugSymbols>-->
+
+    <!--Define o nível de informações de depuração que você deseja que seja gerado. Os valores válidos são "full", "pdbonly", "portable", "embedded" e "none".-->
+    <!--<DebugType>full</DebugType>-->
+
+    <!--Define a configuração entre Debug ou Release-->
+    <!--<Configuration>Debug</Configuration>-->
+
+    <!--Inclue o código fonte no pacote - true ou false-->
+    <!--<IncludeSource>true</IncludeSource>-->
+    
+    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+    <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <!--Define se vai ser incluido no pacote o pdb ou não-->
+    <IncludeSymbols>true</IncludeSymbols>
+
+    <!--Renomeia o pacote de saida para o source symbol-->
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="$(MicrosoftCodeAnalysisNetAnalyzersPackageVersion)" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)" PrivateAssets="All" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageIcon>package-icon.jpg</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="package-icon.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
 </Project>

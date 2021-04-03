@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PocNugetSL</name>
+    </assembly>
+    <members>
+        <member name="T:PocNugetSL.ClassTodo">
+            <summary>Classe de Todo Teste</summary>
+        </member>
+        <member name="M:PocNugetSL.ClassTodo.Todo">
+            <summary>Processa um Todo</summary>
+        </member>
+    </members>
+</doc>
