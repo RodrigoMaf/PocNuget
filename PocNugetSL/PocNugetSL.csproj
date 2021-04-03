@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Diretiva de Identificação nuget">
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Id>$(Id)</Id>
+    <Title>$(Id)</Title>
+    <Product>$(Id)</Product>
+    <Version>1.1.0</Version>
+    <!--<VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>beta</VersionSuffix>-->
+    <Company>Nome da Empresa</Company>
+    <Owners>$(Company)</Owners>
+    <Authors>$(UserName)</Authors>
+    <DescTemp>Pacote de teste para publicação de teste o nuget.</DescTemp>
+    <Copyright>$(Company) (c)</Copyright>
+    <PackageProjectUrl>https://SiteProjeto.com</PackageProjectUrl>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <PackageLicenseUrl>https://LicençaProjeto.com</PackageLicenseUrl>
+    <!--<PackageIconUrl></PackageIconUrl>-->   
+    <PackageTags>DotNetStandard,PocPacote</PackageTags>
+    <PackageReleaseNotes>Este pacote deve ser removido posteriormente</PackageReleaseNotes>
+    <Description>$(DescTemp) $(PackageReleaseNotes)</Description>
+  </PropertyGroup>
+
+
+  <PropertyGroup Label="Dados de repositório">
+    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <!--<PublishRepositoryUrl>true</PublishRepositoryUrl>-->
+    <!--<RepositoryUrl></RepositoryUrl>-->
+    <!--<RepositoryType></RepositoryType>-->
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Publicação do pacote local">
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+    <PublishProtocol>FileSystem</PublishProtocol>
+    <PublishDir>C:\_Projetos\nuget-packages\$(Configuration)</PublishDir>
+    <DocumentationFile>..\PocNugetSL\PocNugetSL.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!--<DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Configuration>Debug</Configuration>
+    <IncludeSource>true</IncludeSource>-->
+    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  
+  
+  <ItemGroup Label="Inclusão de arquivos">
+    <Content Include="Arquivo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>    
+
+</Project>
