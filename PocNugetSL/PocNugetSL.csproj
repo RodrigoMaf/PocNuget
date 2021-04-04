@@ -4,7 +4,7 @@
     <Id>$(Id)</Id>
     <Title>$(Id)</Title>
     <Product>$(Id)</Product>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
     <!--<VersionPrefix>1.0.0</VersionPrefix>
     <VersionSuffix>beta</VersionSuffix>-->
     <Company>Nome da Empresa</Company>
@@ -38,7 +38,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Inclusão de Assets de configuração">
-    <Content Include="Arquivo.json">
+    <Content Include="Assets\ConfigurationFeatures.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -73,9 +73,12 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         
   </PropertyGroup>
-  <ItemGroup>
+  
+  <ItemGroup Label="Pacotes de dependencia">
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="$(MicrosoftCodeAnalysisNetAnalyzersPackageVersion)" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />    
   </ItemGroup>
 
   <PropertyGroup>

@@ -4,11 +4,51 @@
         <name>PocNugetSL</name>
     </assembly>
     <members>
-        <member name="T:PocNugetSL.ClassTodo">
-            <summary>Classe de Todo Teste</summary>
+        <member name="T:PocNugetSL.Configuration.ConfigurationFeatureOneData">
+            <summary>Feature one configuration data</summary>
         </member>
-        <member name="M:PocNugetSL.ClassTodo.Todo">
-            <summary>Processa um Todo</summary>
+        <member name="P:PocNugetSL.Configuration.ConfigurationFeatureOneData.FirstDataProperty">
+            <summary>First configuration data property</summary>
+        </member>
+        <member name="T:PocNugetSL.Features.FeatureOne.FeatureOne">
+            <summary>Feature one classe implementation</summary>
+        </member>
+        <member name="P:PocNugetSL.Features.FeatureOne.FeatureOne.Configurations">
+            <summary>Feature one configuration data</summary>
+        </member>
+        <member name="M:PocNugetSL.Features.FeatureOne.FeatureOne.#ctor(Microsoft.Extensions.Options.IOptions{PocNugetSL.Configuration.ConfigurationFeatureOneData})">
+            <summary>Initializes a new instance of the <see cref="T:PocNugetSL.Features.FeatureOne.FeatureOne"/> class.</summary>
+            <param name="configOptions">Options - Feature one configuration data</param>
+        </member>
+        <member name="M:PocNugetSL.Features.FeatureOne.FeatureOne.Execute">
+            <summary>Execute especific action from feature one</summary>
+        </member>
+        <member name="T:PocNugetSL.Interfaces.FeatureOne.IFeatureOne">
+            <summary>Feature one interface</summary>
+        </member>
+        <member name="M:PocNugetSL.Interfaces.FeatureOne.IFeatureOne.Execute">
+            <summary>Execute especific action from feature one</summary>
+        </member>
+        <member name="T:PocNugetSL.RegisterPocNugetSL">
+            <summary>Register packages features</summary>
+        </member>
+        <member name="M:PocNugetSL.RegisterPocNugetSL.ConfigureFeatureOne(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Configure Feature one to use</summary>
+            <param name="services">Dependency Injection</param>
+            <param name="configuration">Configuration data</param>
+        </member>
+        <member name="T:PocNugetSL.Register.RegisterFeatureOne">
+            <summary>Register feature one</summary>
+        </member>
+        <member name="M:PocNugetSL.Register.RegisterFeatureOne.ConfigureFeatureOne(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Configure Feature one to use</summary>
+            <param name="services">Dependency Injection</param>
+            <param name="configuration">Configuration data</param>
+        </member>
+        <member name="M:PocNugetSL.Register.RegisterFeatureOne.ConfigureData(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Configuration data feature one</summary>
+            <param name="services">Dependency Injection</param>
+            <param name="configuration">Configuration data</param>
         </member>
     </members>
 </doc>
