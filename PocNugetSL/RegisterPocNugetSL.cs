@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PocNugetSL.Registers;
 
 namespace PocNugetSL
 {
@@ -11,7 +12,7 @@ namespace PocNugetSL
         /// <param name="configuration">Configuration data</param>
         public static IServiceCollection ConfigureFeatureOne(this IServiceCollection services, IConfiguration configuration)
             => services
-                .ConfigureFeatureOne(configuration);
+                .InternalConfigureFeatureOne(configuration);
 
     }
 }

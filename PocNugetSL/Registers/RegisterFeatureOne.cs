@@ -4,7 +4,7 @@ using PocNugetSL.Configuration;
 using PocNugetSL.Features.FeatureOne;
 using PocNugetSL.Interfaces.FeatureOne;
 
-namespace PocNugetSL.Register
+namespace PocNugetSL.Registers
 {
     /// <summary>Register feature one</summary>
     internal static class RegisterFeatureOne
@@ -12,7 +12,7 @@ namespace PocNugetSL.Register
         /// <summary>Configure Feature one to use</summary>
         /// <param name="services">Dependency Injection</param>
         /// <param name="configuration">Configuration data</param>
-        internal static IServiceCollection ConfigureFeatureOne(this IServiceCollection services, IConfiguration configuration)
+        internal static IServiceCollection InternalConfigureFeatureOne(this IServiceCollection services, IConfiguration configuration)
             => services
                 .ConfigureData(configuration)
                 .AddSingleton<IFeatureOne, FeatureOne>();

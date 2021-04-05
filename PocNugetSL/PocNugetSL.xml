@@ -37,15 +37,15 @@
             <param name="services">Dependency Injection</param>
             <param name="configuration">Configuration data</param>
         </member>
-        <member name="T:PocNugetSL.Register.RegisterFeatureOne">
+        <member name="T:PocNugetSL.Registers.RegisterFeatureOne">
             <summary>Register feature one</summary>
         </member>
-        <member name="M:PocNugetSL.Register.RegisterFeatureOne.ConfigureFeatureOne(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:PocNugetSL.Registers.RegisterFeatureOne.InternalConfigureFeatureOne(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>Configure Feature one to use</summary>
             <param name="services">Dependency Injection</param>
             <param name="configuration">Configuration data</param>
         </member>
-        <member name="M:PocNugetSL.Register.RegisterFeatureOne.ConfigureData(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:PocNugetSL.Registers.RegisterFeatureOne.ConfigureData(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>Configuration data feature one</summary>
             <param name="services">Dependency Injection</param>
             <param name="configuration">Configuration data</param>
