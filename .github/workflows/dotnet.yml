@@ -28,5 +28,5 @@ jobs:
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
     - name: Publish Nuget
-      run: dotnet nuget push PocNugetSL.1.7.0.nupkg -k "$NUGETKEY" -s "$NUGETSERVER"
+      run: dotnet nuget push PocNugetSL.1.7.0.nupkg -k "$NUGET_KEY" -s "$NUGET_SERVER"
       
