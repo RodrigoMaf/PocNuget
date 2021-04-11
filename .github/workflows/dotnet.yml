@@ -27,4 +27,5 @@ jobs:
       env: # Ou como uma variável de ambiente
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
         NUGET_SERVER: ${{ secrets.NUGET_SERVER }}
-      run: dotnet nuget push PocNugetSL.1.7.0.nupkg -k "$NUGET_KEY" -s "$NUGET_SERVER"
+      run: |
+      dotnet nuget push PocNugetSL.1.7.0.nupkg -k "$NUGET_KEY" -s "$NUGET_SERVER"
