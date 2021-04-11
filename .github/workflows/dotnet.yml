@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+        NUGETKEY: ${{ secrets.NUGETKEY }}
+        NUGETSERVER: ${{ secrets.NUGETSERVER }}
 #    - name: Restore dependencies
 #      run: dotnet restore
     - name: Build
@@ -25,8 +27,5 @@ jobs:
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
     - name: Publish Nuget
-      with: # Ou como uma variável de ambiente
-        NUGETKEY: ${{ secrets.NUGETKEY }}
-        NUGETSERVER: ${{ secrets.NUGETSERVER }}
       run: dotnet nuget push PocNugetSL.1.7.0.nupkg -k "$NUGETKEY" -s "$NUGETSERVER"
       
