@@ -17,7 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-        NUGETKEY: ${{ secrets.NUGETKEY }}
+      env:
+        NUGETKEY: ${{ secrets.NUGET_KEY }}
         NUGETSERVER: ${{ secrets.NUGETSERVER }}
 #    - name: Restore dependencies
 #      run: dotnet restore
