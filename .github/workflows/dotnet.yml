@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
       env:
-        NUGETKEY: ${{ secrets.NUGET_KEY }}
-        NUGETSERVER: ${{ secrets.NUGETSERVER }}
+        NUGET_KEY: ${{ secrets.NUGET_KEY }}
+        NUGET_SERVER: ${{ secrets.NUGET_SERVER }}
 #    - name: Restore dependencies
 #      run: dotnet restore
     - name: Build
