@@ -25,6 +25,6 @@ jobs:
 #      run: dotnet test --no-build --verbosity normal
     - name: Publish Nuget    
       env: # Ou como uma variável de ambiente
-        NUGET_KEY: ${{ secrets.NUGET_KEY }}
-        NUGET_SERVER: ${{ secrets.NUGET_SERVER }}
-      run: dotnet nuget push PocNugetSL.1.7.0.nupkg -k "${{ secrets.NUGET_KEY }}" -s "${{ secrets.NUGET_SERVER }}"
+        NUGETKEY: ${{ secrets.NUGETKEY }}
+        NUGETSERVER: ${{ secrets.NUGETSERVER }}
+      run: dotnet nuget push PocNugetSL.1.7.0.nupkg -k "$NUGETKEY" -s "$NUGETSERVER"
